@@ -26,6 +26,5 @@ Develop an AI-powered diagnostic tool designed to assist doctors in identifying 
 
 ✅ **Success Metrics**  
 - Diagnosis accuracy rate ≥ 90%  
-- Response time ≤ 2 seconds  
 
 
