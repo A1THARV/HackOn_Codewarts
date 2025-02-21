@@ -3,22 +3,21 @@ import { GoogleGenerativeAI } from "@google/generative-ai"
 
 const genAI = new GoogleGenerativeAI("AIzaSyBZfPzNVOcxkkcjbs1pcEIbGpei8tFq8hk")
 
-const ANALYSIS_PROMPT = `You are an expert medical diagnostic AI system specializing in rare diseases. Analyze the provided patient data and return a comprehensive JSON object that EXACTLY matches this schema. The analysis must be detailed, specific and actionable.
-
+const ANALYSIS_PROMPT = `You are an expert medical diagnostic AI system specializing in rare diseases. Analyze the provided patient data and return a comprehensive JSON object that EXACTLY matches this schema: 
 {
   "overallAssessment": {
-    "confidenceScore": number, // 0-100
-    "urgencyLevel": number, // 1-5
-    "recommendedActionPriority": string, // "Immediate", "Urgent", "Soon", "Routine"
+    "confidenceScore": number,
+    "urgencyLevel": number,
+    "recommendedActionPriority": string,
     "primaryConcerns": string[]
   },
   "possibleDiagnoses": [
     {
       "condition": string,
-      "probability": number, // 0-100
+      "probability": number,
       "matchingSymptoms": string[],
       "nonMatchingSymptoms": string[],
-      "rarityScore": number, // 1-10, 10 being extremely rare
+      "rarityScore": number,
       "geneticFactors": string[],
       "environmentalFactors": string[]
     }
@@ -27,7 +26,7 @@ const ANALYSIS_PROMPT = `You are an expert medical diagnostic AI system speciali
     "presentingSymptoms": [
       {
         "symptom": string,
-        "severity": number, // 1-10
+        "severity": number,
         "duration": string,
         "frequency": string,
         "relatedConditions": string[]
@@ -55,7 +54,7 @@ const ANALYSIS_PROMPT = `You are an expert medical diagnostic AI system speciali
     "recommended": [
       {
         "test": string,
-        "priority": number, // 1-5
+        "priority": number,
         "rationale": string,
         "expectedFindings": string[]
       }
@@ -65,7 +64,7 @@ const ANALYSIS_PROMPT = `You are an expert medical diagnostic AI system speciali
         "test": string,
         "result": string,
         "interpretation": string,
-        "impact": number // 0-100
+        "impact": number
       }
     ],
     "biomarkers": [
@@ -82,14 +81,14 @@ const ANALYSIS_PROMPT = `You are an expert medical diagnostic AI system speciali
     "specialistReferrals": [
       {
         "specialty": string,
-        "urgency": number, // 1-5
+        "urgency": number,
         "rationale": string
       }
     ],
     "potentialTreatments": [
       {
         "treatment": string,
-        "effectiveness": number, // 0-100
+        "effectiveness": number,
         "risks": string[],
         "benefits": string[]
       }
@@ -105,7 +104,7 @@ const ANALYSIS_PROMPT = `You are an expert medical diagnostic AI system speciali
     "relevantGenes": string[],
     "recommendedTests": string[],
     "familyHistory": {
-      "significance": number, // 0-100
+      "significance": number,
       "patterns": string[],
       "recommendations": string[]
     }
@@ -187,8 +186,7 @@ CRITICAL INSTRUCTIONS:
 6. Do NOT add fields not in the schema
 7. Do NOT include comments
 8. Format with proper indentation
-
-Analyze this patient data and provide the analysis in the EXACT format specified above:`
+`
 
 export async function POST(req: Request) {
   try {
@@ -215,4 +213,3 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "An error occurred while processing the request" }, { status: 500 })
   }
 }
-
