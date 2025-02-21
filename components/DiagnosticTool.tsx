@@ -1,13 +1,13 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { DiagnosticDashboard } from "./dashboard/DiagnosticDashboard"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Upload } from "lucide-react"
+import { motion } from "framer-motion"
 
 export default function DiagnosticTool() {
   const [file, setFile] = useState<File | null>(null)
@@ -47,17 +47,22 @@ export default function DiagnosticTool() {
   }
 
   return (
-    <div className="w-full max-w-7xl mx-auto">
-      <Card className="mb-8">
+    <motion.div
+      className="w-full max-w-3xl mx-auto"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Card className="glass-card glow">
         <CardHeader>
-          <CardTitle>Upload Patient Data</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-2xl text-white">Upload Patient Data</CardTitle>
+          <CardDescription className="text-gray-400">
             Upload a file containing patient data for comprehensive analysis. The file should include symptoms, medical
             history, test results, and other relevant information.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid w-full max-w-sm items-center gap-1.5">
               <Input
                 type="file"
@@ -65,10 +70,14 @@ export default function DiagnosticTool() {
                 onChange={handleFileChange}
                 accept=".txt,.csv,.json"
                 required
-                className="cursor-pointer"
+                className="cursor-pointer bg-gray-800 border-gray-700 text-gray-300"
               />
             </div>
-            <Button type="submit" disabled={isLoading}>
+            <Button
+              type="submit"
+              disabled={isLoading}
+              className="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:opacity-90 transition-opacity"
+            >
               {isLoading ? (
                 "Analyzing..."
               ) : (
@@ -83,7 +92,7 @@ export default function DiagnosticTool() {
       </Card>
 
       {analysis && <DiagnosticDashboard data={analysis} />}
-    </div>
+    </motion.div>
   )
 }
 
