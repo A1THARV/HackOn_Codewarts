@@ -198,7 +198,7 @@ export async function POST(req: Request) {
     }
 
     const fileContent = await file.text()
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" })
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" })
 
     const prompt = ANALYSIS_PROMPT + "\n\n" + fileContent
     const result = await model.generateContent(prompt)
