@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import { GoogleGenerativeAI } from "@google/generative-ai"
 
-const genAI = new GoogleGenerativeAI("AIzaSyCMWY5MKwwRW5H6erk5v9jb-hUE7GiZV8I")
+const genAI = new GoogleGenerativeAI("AIzaSyBZfPzNVOcxkkcjbs1pcEIbGpei8tFq8hk")
 
 const ANALYSIS_PROMPT = `You are an expert medical diagnostic AI system specializing in rare diseases. Analyze the provided patient data and return a comprehensive JSON object that EXACTLY matches this schema. The analysis must be detailed, specific and actionable.
 
