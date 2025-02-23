@@ -21,6 +21,9 @@ Develop an AI-powered diagnostic tool designed to assist doctors in identifying 
 - **app/page.tsx**: Main page of the application that includes the diagnostic tool component.
 - **components/DiagnosticTool.tsx**: Component responsible for handling file uploads and processing patient data.
 
+## Demo Link:
+https://rxai.vercel.app/
+
 ## Usage
 
 1. **Clone the Repository**:
