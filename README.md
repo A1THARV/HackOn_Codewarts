@@ -64,7 +64,8 @@ https://rxai.vercel.app/
 - Compliance with GDPR, HIPAA, and other relevant regulations.  
 
 ✅ **Success Metrics**  
-- Diagnosis accuracy rate ≥ 90%  
+- Diagnosis accuracy rate ≥ 90%
+- Improve time efficiency 
 
 ## License
 
